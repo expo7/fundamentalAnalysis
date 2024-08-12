@@ -84,9 +84,9 @@ def register_view(request):
         form = RegisterForm()
     return render(request, 'stocks/register.html', {'form': form})
 
-@login_required
-def user_profile(request):
-    return render(request, 'stocks/user_profile.html')
+# @login_required
+# def user_profile(request):
+#     return render(request, 'stocks/user_profile.html')
 
 def logout_view(request):
     logout(request)

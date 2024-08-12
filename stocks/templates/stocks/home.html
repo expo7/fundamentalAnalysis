@@ -13,17 +13,15 @@
     </div>
 </div>
 
-<div class="container mt-5 p-3 border rounded">
+<div class="container mt-1 p-3 border rounded">
     <div class="row">
-        <div class="col-lg-8 offset-lg-2">
-            {% comment %} <div class="text-center mb-4">
-                <img src="{% static 'images\logo.png' %}" alt="Logo" class="img-fluid" style="max-width: 200px;">
-            </div> {% endcomment %}
-            <h1 class="mb-4">{{ article.title }}</h1>
+        {% comment %} <div class="col-lg-8 offset-lg-2"> {% endcomment %}
+        <div class="col-lg-10 offset-lg-1">
+            <h1 class="mb-4 text-center">{{ article.title }}</h1>
 
-            <p class="text-muted">
+            {% comment %} <p class="text-muted">
                 By <strong>{{ article.author }}</strong> | Published on {{ article.published_date|date:"F d, Y" }}
-            </p>
+            </p> {% endcomment %}
 
             <div class="content mb-4">
                 <!-- Render the article content with Markdown support -->

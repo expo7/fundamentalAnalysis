@@ -16,8 +16,15 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from django.urls import path
+from . import views
+
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('stocks.urls')),  # Include URLs from the stocks app
+    path("robots.txt", views.RobotsView.as_view(), name="robots_txt"),
+    # path('sitemap.xml', sitemap, {'sitemaps': sitemaps}, name='django.contrib.sitemaps.views.sitemap'),
+    # path('robots.txt', TemplateView.as_view(template_name="robots.txt", content_type="text/plain")),
 ]

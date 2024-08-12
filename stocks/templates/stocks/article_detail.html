@@ -5,8 +5,9 @@
 {% block content %}
 <div class="container mt-5 p-3 border rounded">
     <div class="row">
-        <div class="col-lg-8 offset-lg-2">
-            <h1 class="mb-4">{{ article.title }}</h1>
+        <div class="col-lg-10 offset-lg-1">
+
+            <h1 class="mb-4 text-center">{{ article.title }}</h1>
 
             <p class="text-muted">
                 By <strong>{{ article.author }}</strong> | Published on {{ article.published_date|date:"F d, Y" }}

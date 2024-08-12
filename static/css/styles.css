@@ -1,0 +1,176 @@
+/* styles.css
+
+/* Custom styles for the navbar */
+.navbar {
+    margin-bottom: 20px;
+}
+
+/* Custom styles for the footer */
+.footer {
+    background-color: #f8f9fa;
+    padding: 20px 0;
+}
+
+.footer p {
+    margin: 0;
+    color: #6c757d;
+    /* color:blue */
+}
+
+/* Body background color */
+body.bg-light {
+    background-color: #f8f9fa;
+}
+
+/* Header styles */
+header.bg-secondary {
+    background-color: #6c757d;
+}
+
+header.bg-secondary .navbar-brand,
+header.bg-secondary .nav-link {
+    color: #ffffff;
+}
+
+/* Main content styles */
+main.bg-white {
+    background-color: #ffffff;
+    border: 1px solid #dee2e6;
+    border-radius: 0.25rem;
+    padding: 1rem;
+}
+
+/* Footer styles */
+footer.bg-dark {
+    background-color: #343a40;
+}
+
+footer.bg-dark p {
+    color: #ffffff;
+}
+
+/* Custom styles for the related articles sidebar */
+.related-articles {
+    background-color: #e9ecef;
+    border: 1px solid #ced4da;
+    border-radius: 0.25rem;
+    padding: 1rem;
+}
+
+.related-articles h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: #343a40;
+}
+
+.related-articles .list-group-item {
+    border: none;
+    padding: 0.75rem 1.25rem;
+    background-color: #f8f9fa;
+}
+
+.related-articles .list-group-item a {
+    text-decoration: none;
+    color: #6c757d;
+}
+
+.related-articles .list-group-item a:hover {
+    text-decoration: underline;
+    color: #495057;
+}
+
+/* .navbar-brand.active {
+    color: red;
+    font-weight: bold;
+} */
+
+
+/* Custom styles for the related articles sidebar */
+.related-articles {
+    background-color: #f8f9fa;
+    border: 1px solid #dee2e6;
+    border-radius: 0.25rem;
+    padding: 1rem;
+}
+
+.related-articles h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.related-articles .list-group-item {
+    border: none;
+    padding: 0.75rem 1.25rem;
+}
+
+.related-articles .list-group-item a {
+    text-decoration: none;
+    color: #007bff;
+}
+
+.related-articles .list-group-item a:hover {
+    text-decoration: underline;
+}
+
+
+/* Body background color */
+body.bg-light {
+    background-color: #f0f2f5;
+}
+
+/* Header styles */
+header.bg-primary {
+    background-color: #007bff;
+}
+
+header.bg-primary .navbar-brand,
+header.bg-primary .nav-link {
+    color: #ffffff;
+}
+
+/* Main content styles */
+main.bg-white {
+    background-color: #ffffff;
+    border: 1px solid #dee2e6;
+    border-radius: 0.25rem;
+    padding: 1rem;
+}
+
+/* Footer styles */
+footer.bg-dark {
+    background-color: #343a40;
+}
+
+footer.bg-dark p {
+    color: #ffffff;
+}
+
+/* Custom styles for the related articles sidebar */
+.related-articles {
+    background-color: #e9ecef;
+    border: 1px solid #ced4da;
+    border-radius: 0.25rem;
+    padding: 1rem;
+}
+
+.related-articles h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: #343a40;
+}
+
+.related-articles .list-group-item {
+    border: none;
+    padding: 0.75rem 1.25rem;
+    background-color: #f8f9fa;
+}
+
+.related-articles .list-group-item a {
+    text-decoration: none;
+    color: #007bff;
+}
+
+.related-articles .list-group-item a:hover {
+    text-decoration: underline;
+    color: #0056b3;
+} */
