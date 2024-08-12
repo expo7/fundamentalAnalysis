@@ -49,10 +49,6 @@ def article_list(request):
     articles = Article.objects.all()
     return render(request, 'stocks/article_list.html', {'articles': articles,'sectors': sector_models})
 
-# def sector_analysis(request):
-#     sectors = Sector.objects.all()
-#     return render(request, 'stocks/sector_analysis.html', {'sectors': sectors})
-
 def article_detail(request, slug):
     sector_models = Sector.objects.all()
     article = get_object_or_404(Article, slug=slug)
