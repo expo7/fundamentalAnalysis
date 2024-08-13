@@ -12,14 +12,61 @@ Functions:
 - user_profile(request): Renders the user profile page (requires login).
 - logout_view(request): Logs out the user and redirects to the home page.
 """
+# from django.contrib.auth import login, authenticate, logout
+# from django.contrib.auth.decorators import login_required
+# from .models import Stock, Sector, Article
+# from .forms import LoginForm, RegisterForm  # Assuming you have these forms defined
+# from django.views.generic import FormView
+# from django.contrib.auth.forms import AuthenticationForm
+# from django.contrib.auth import login as auth_login
+# from .models import Sector
+# from django.views.generic.base import TemplateView
+
+
+from django.shortcuts import render, get_object_or_404, redirect
 from django.contrib.auth import login, authenticate, logout
 from django.contrib.auth.decorators import login_required
+from django.contrib import messages  # Import messages framework
 from .models import Stock, Sector, Article
 from .forms import LoginForm, RegisterForm  # Assuming you have these forms defined
 from django.views.generic import FormView
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth import login as auth_login
-from .models import Sector
+from django.views.generic.base import TemplateView
+
+# Login view
+class login_view(FormView):
+    template_name = 'stocks/login.html'
+    form_class = AuthenticationForm
+
+    def form_valid(self, form):
+        user = form.get_user()
+        auth_login(self.request, user)
+        return redirect('home')
+
+    def form_invalid(self, form):
+        messages.error(self.request, 'Invalid username or password.')
+        return self.render_to_response(self.get_context_data(form=form))
+
+# Register view
+def register_view(request):
+    if request.method == 'POST':
+        form = RegisterForm(request.POST)
+        if form.is_valid():
+            user = form.save()
+            login(request, user)
+            return redirect('home')
+        else:
+            messages.error(request, 'Registration failed. Please correct the errors below.')
+    else:
+        form = RegisterForm()
+    return render(request, 'stocks/register.html', {'form': form})
+
+# Other views...
+
+class RobotsView(TemplateView):
+    template_name = "robots.txt"
+    content_type = "text/plain"
 
 def home(request):
     """
@@ -64,25 +111,25 @@ def sector_detail(request, slug):
     sector_models = Sector.objects.all()
     return render(request, 'stocks/sector_detail.html', {'sector': sector, 'article': article,'related_articles': related_articles,'sectors': Sector.objects.all()})
 
-class login_view(FormView):
-    template_name = 'stocks/login.html'
-    form_class = AuthenticationForm
+# class login_view(FormView):
+#     template_name = 'stocks/login.html'
+#     form_class = AuthenticationForm
     
-    def form_valid(self, form):
-        auth_login(self.request, form.get_user())
-        return redirect('home')  # Redirect to home or any other page after login
+#     def form_valid(self, form):
+#         auth_login(self.request, form.get_user())
+#         return redirect('home')  # Redirect to home or any other page after login
 
 
-def register_view(request):
-    if request.method == 'POST':
-        form = RegisterForm(request.POST)
-        if form.is_valid():
-            user = form.save()
-            login(request, user)
-            return redirect('home')
-    else:
-        form = RegisterForm()
-    return render(request, 'stocks/register.html', {'form': form})
+# def register_view(request):
+#     if request.method == 'POST':
+#         form = RegisterForm(request.POST)
+#         if form.is_valid():
+#             user = form.save()
+#             login(request, user)
+#             return redirect('home')
+#     else:
+#         form = RegisterForm()
+#     return render(request, 'stocks/register.html', {'form': form})
 
 # @login_required
 # def user_profile(request):
